@@ -1,0 +1,21 @@
+.profile__add-botton {
+  background-image: url(../../../images/AddButton.svg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 50px;
+  align-self: center;
+  background-color: rgba(0, 0, 0, 0);
+  object-fit: cover;
+  border: none;
+  border-radius: 2px;
+}
+.profile__add-botton:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+@media screen and (max-width: 320px) {
+  .profile__add-botton {
+    background-image: url(../../../images/Add\ Button\ Mobile.svg);
+    width: 282px;
+  }
+}

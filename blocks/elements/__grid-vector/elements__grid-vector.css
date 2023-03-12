@@ -1,0 +1,7 @@
+.elements__grid-vector {
+  background-color: white;
+}
+.elements__grid-vector:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

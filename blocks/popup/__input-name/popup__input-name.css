@@ -1,0 +1,26 @@
+.popup__input-name {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  display: block;
+  width: 358px;
+  height: 57px;
+  border: none;
+  border-bottom: 1px solid gray;
+  margin-left: 36px;
+}
+
+.popup__input-name:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+input::-ms-input-placeholder {
+  font-family: Inter;
+}
+@media screen and (max-width: 320px) {
+  .popup__input-name {
+    width: 238px;
+    height: 54px;
+    margin-left: 22px;
+  }
+}

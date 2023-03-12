@@ -16,16 +16,7 @@
     width: 100%;
   }
 }
-@media screen and (max-width: 1024px) {
-  .page__content {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .page__content {
-    width: 100%;
-  }
-}
+
 @media screen and (max-width: 320px) {
   .page__content {
     width: 100%;

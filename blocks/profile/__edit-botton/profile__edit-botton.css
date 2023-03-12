@@ -1,0 +1,20 @@
+.profile__edit-botton {
+  grid-area: edit-botton;
+  background-image: url(../../../images/Edit\ Button.svg);
+  background-color: rgba(0, 0, 0, 0);
+  object-fit: cover;
+  border: none;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+}
+.profile__edit-botton:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+@media screen and (max-width: 320px) {
+  .profile__edit-botton {
+    width: 18px;
+    height: 18px;
+  }
+}
