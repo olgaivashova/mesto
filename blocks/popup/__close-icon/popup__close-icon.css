@@ -3,12 +3,13 @@
   background-color: rgba(0, 0, 0, 0);
   border: 0;
   display: block;
+  background-size: cover;
   width: 32px;
   height: 32px;
   color: #fff;
   position: absolute;
-  top: 152px;
-  left: 438px;
+  top: 155px;
+  left: calc(863px + ((100vw - 1280px) / 2));
 }
 .popup__close-icon:hover {
   opacity: 0.6;
@@ -16,10 +17,9 @@
 }
 @media screen and (max-width: 320px) {
   .popup__close-icon {
-    background-image: url(../../../images/CloseIconMobile.svg);
     width: 20px;
     height: 20px;
     top: 87px;
-    left: 261px;
+    left: calc(281px + ((100vw - 320px) / 2));
   }
 }

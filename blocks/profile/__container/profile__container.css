@@ -7,6 +7,6 @@
   .profile__container {
     flex-direction: column;
     width: 282px;
-    min-height: 140px;
+    /* min-height: 140px;*/
   }
 }
