@@ -1,0 +1,8 @@
+.popup__input_theme_job {
+  padding-top: 30px;
+}
+@media screen and (max-width: 320px) {
+  .popup__input_theme_job {
+    padding-top: 20px;
+  }
+}

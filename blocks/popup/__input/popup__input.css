@@ -7,7 +7,7 @@
   text-align: left;
   display: block;
   width: 358px;
-  height: 57px;
+  height: 27px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-left: 36px;
@@ -21,7 +21,6 @@
 @media screen and (max-width: 320px) {
   .popup__input {
     width: 238px;
-    height: 54px;
     margin-left: 22px;
   }
 }

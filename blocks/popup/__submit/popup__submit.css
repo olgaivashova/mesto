@@ -6,10 +6,9 @@
   display: block;
   color: white;
   margin-left: 36px;
-  margin-top: 31px;
+  margin-top: 48px;
   border: none;
   border-radius: 2px;
-  font-family: Inter;
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -27,7 +26,7 @@
     width: 238px;
     height: 46px;
     margin-left: 22px;
-    margin-top: 45px;
+    margin-top: 47px;
     font-size: 14px;
     line-height: 17px;
   }
