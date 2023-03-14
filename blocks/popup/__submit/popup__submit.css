@@ -5,11 +5,10 @@
   height: 50px;
   display: block;
   color: white;
-  margin-left: 36px;
-  margin-top: 48px;
+  margin: 48px 36px 37px;
   border: none;
   border-radius: 2px;
-  font-family: Inter;
+  font-family: "Inter", "Arial", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
@@ -24,9 +23,7 @@
 @media screen and (max-width: 320px) {
   .popup__submit {
     width: 238px;
-    height: 46px;
-    margin-left: 22px;
-    margin-top: 47px;
+    margin: 48px 22px 25px;
     font-size: 14px;
     line-height: 17px;
   }

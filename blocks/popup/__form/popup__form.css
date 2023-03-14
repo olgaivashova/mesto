@@ -1,17 +1,12 @@
 .popup__form {
-  margin: auto;
-  margin-top: 195px;
   display: flex;
   flex-direction: column;
   width: 430px;
-  height: 330px;
   border-radius: 10px;
   background-color: #fff;
 }
 @media screen and (max-width: 320px) {
   .popup__form {
     width: 284px;
-    height: 322px;
-    margin-top: 123px;
   }
 }

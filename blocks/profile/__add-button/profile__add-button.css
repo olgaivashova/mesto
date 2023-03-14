@@ -5,10 +5,11 @@
   height: 22px;
   background-color: rgba(0, 0, 0, 0);
   background-position: 50% 50%;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   padding: 24px 72px;
   align-self: center;
   border-radius: 2px;
+  margin-left: 245px;
 }
 .profile__add-button:hover {
   opacity: 0.6;
@@ -19,5 +20,6 @@
     width: 16px;
     height: 16px;
     padding: 24px 138px;
+    margin-left: 0;
   }
 }
