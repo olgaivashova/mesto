@@ -8,8 +8,8 @@
   height: 32px;
   color: #fff;
   position: absolute;
-  top: 155px;
-  left: calc(863px + ((100vw - 1280px) / 2));
+  top: -40px;
+  right: 0;
 }
 .popup__close-icon:hover {
   opacity: 0.6;
@@ -19,7 +19,6 @@
   .popup__close-icon {
     width: 20px;
     height: 20px;
-    top: 157px;
-    left: calc(281px + ((100vw - 320px) / 2));
+    top: -32px;
   }
 }
