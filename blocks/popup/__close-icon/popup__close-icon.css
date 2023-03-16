@@ -15,11 +15,11 @@
   opacity: 0.6;
   cursor: pointer;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1080px) {
   .popup__close-icon {
     width: 20px;
     height: 20px;
-    top: 87px;
+    top: 157px;
     left: calc(281px + ((100vw - 320px) / 2));
   }
 }

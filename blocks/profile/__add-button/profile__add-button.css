@@ -6,16 +6,16 @@
   background-color: rgba(0, 0, 0, 0);
   background-position: 50% 50%;
   border: 1px solid #fff;
-  padding: 24px 72px;
+  padding: 24px 73px;
   align-self: center;
   border-radius: 2px;
-  margin-left: 245px;
+  margin-left: 247px;
 }
 .profile__add-button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1080px) {
   .profile__add-button {
     width: 16px;
     height: 16px;

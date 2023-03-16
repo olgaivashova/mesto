@@ -2,7 +2,7 @@
   display: flex;
   max-width: 336px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1080px) {
   .profile__stripe {
     max-width: 282px;
     padding-left: 46px;

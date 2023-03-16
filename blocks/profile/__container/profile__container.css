@@ -3,7 +3,7 @@
   /*justify-content: space-between;*/
   max-width: 757px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1080px) {
   .profile__container {
     flex-direction: column;
     max-width: 282px;

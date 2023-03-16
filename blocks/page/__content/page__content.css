@@ -11,7 +11,7 @@
   text-rendering: optimizeLegibility;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1080px) {
   .page__content {
     width: 100%;
   }

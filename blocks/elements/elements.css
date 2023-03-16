@@ -5,7 +5,7 @@
   padding-bottom: 67px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1080px) {
   .elements {
     margin-left: 19px;
     margin-right: 19px;

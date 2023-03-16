@@ -5,7 +5,7 @@
   border-radius: 10px;
   background-color: #fff;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1080px) {
   .popup__form {
     width: 284px;
   }

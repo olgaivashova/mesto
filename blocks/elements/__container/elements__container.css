@@ -1,6 +1,7 @@
 .elements__container {
   width: 100%;
   display: grid;
+  box-sizing: border-box;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px 17px;
@@ -8,8 +9,9 @@
   margin: 0;
   padding: 0;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1080px) {
   .elements__container {
+    width: 100%;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 1fr);
     gap: 20px;
