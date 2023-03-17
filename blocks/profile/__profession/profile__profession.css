@@ -13,12 +13,11 @@
   white-space: nowrap;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 620px) {
   .profile__profession {
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    padding-bottom: 32px;
     padding-top: 7px;
     max-width: 282px;
   }

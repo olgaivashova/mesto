@@ -3,7 +3,7 @@
   height: 120px;
   display: block;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 620px) {
   .profile__avatar {
     align-self: center;
   }

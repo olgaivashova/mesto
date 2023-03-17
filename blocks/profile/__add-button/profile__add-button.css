@@ -15,11 +15,24 @@
   opacity: 0.6;
   cursor: pointer;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1275px) {
+  .profile__add-button {
+    margin-left: 30px;
+    align-self: flex-start;
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 1010px) {
   .profile__add-button {
     width: 16px;
     height: 16px;
-    padding: 24px 138px;
+    padding: 24px 140px;
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .profile__add-button {
     margin-left: 0;
+    margin-top: 33px;
   }
 }

@@ -7,13 +7,13 @@
   text-align: left;
   display: block;
   width: 358px;
-  height: 27px;
+  min-height: 27px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-left: 36px;
 }
 .popup__input:last-child {
-  padding-top: 30px;
+  padding-top: 27px;
 }
 
 .popup__input:focus {
@@ -21,9 +21,10 @@
   border: 1px solid blue;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1275px) {
   .popup__input {
     width: 238px;
+    min-height: 28px;
     margin-left: 22px;
   }
   .popup__input:last-child {

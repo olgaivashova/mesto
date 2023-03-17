@@ -4,8 +4,22 @@
   margin-right: 200px;
   padding-bottom: 67px;
 }
+@media screen and (max-width: 1275px) {
+  .elements {
+    margin-left: 215px;
+    margin-right: 215px;
+    max-width: 588px;
+  }
+}
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1010px) {
+  .elements {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-bottom: 55px;
+  }
+}
+@media screen and (max-width: 620px) {
   .elements {
     margin-left: 19px;
     margin-right: 19px;

@@ -3,7 +3,21 @@
   margin-right: 200px;
   padding-bottom: 60px;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1275px) {
+  .footer {
+    max-width: 588px;
+    margin-left: 215px;
+    margin-right: 215px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .footer {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 620px) {
   .footer {
     margin-left: 19px;
     margin-right: 19px;
