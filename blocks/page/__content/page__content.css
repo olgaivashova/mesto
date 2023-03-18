@@ -10,9 +10,3 @@
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
-
-@media screen and (max-width: 1080px) {
-  .page__content {
-    width: 100%;
-  }
-}

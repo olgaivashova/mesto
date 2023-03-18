@@ -9,15 +9,11 @@
   margin: 0;
   padding: 0;
 }
-@media screen and (max-width: 1275px) {
+
+@media screen and (max-width: 1010px) {
   .elements__container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 25px 21px;
-  }
-}
-@media screen and (max-width: 1010px) {
-  .elements__container {
     gap: 18px 15px;
   }
 }
