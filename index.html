@@ -35,98 +35,13 @@
             </div>
           </section>
           <section class="elements">
-            <ul class="elements__container">
-              <li class="elements__grid-item">
-                <img
-                  class="elements__grid-photo"
-                  src="./images/Karachaevsk.png"
-                  alt="Карачаевск"
-                />
-                <div class="elements__titles">
-                  <h2 class="elements__grid-text">Карачаевск</h2>
-                  <button
-                    class="elements__grid-vector elements__grid-vector_active"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="elements__grid-item">
-                <img
-                  class="elements__grid-photo"
-                  src="./images/Elbrus.png"
-                  alt="Эльбрус"
-                />
-                <div class="elements__titles">
-                  <h2 class="elements__grid-text">Гора Эльбрус</h2>
-                  <button
-                    class="elements__grid-vector elements__grid-vector_active"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="elements__grid-item">
-                <img
-                  class="elements__grid-photo"
-                  src="./images/Dombai.png"
-                  alt="Домбай"
-                />
-                <div class="elements__titles">
-                  <h2 class="elements__grid-text">Домбай</h2>
-                  <button
-                    class="elements__grid-vector elements__grid-vector_active"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="elements__grid-item">
-                <img
-                  class="elements__grid-photo"
-                  src="./images/Elbrus.png"
-                  alt="Эльбрус"
-                />
-                <div class="elements__titles">
-                  <h2 class="elements__grid-text">Гора Эльбрус</h2>
-                  <button
-                    class="elements__grid-vector elements__grid-vector_active"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="elements__grid-item">
-                <img
-                  class="elements__grid-photo"
-                  src="./images/Dombai.png"
-                  alt="Домбай"
-                />
-                <div class="elements__titles">
-                  <h2 class="elements__grid-text">Домбай</h2>
-                  <button
-                    class="elements__grid-vector elements__grid-vector_active"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="elements__grid-item">
-                <img
-                  class="elements__grid-photo"
-                  src="./images/Karachaevsk.png"
-                  alt="Карачаево-Черкессия"
-                />
-                <div class="elements__titles">
-                  <h2 class="elements__grid-text">Карачаево-Черкессия</h2>
-                  <button
-                    class="elements__grid-vector elements__grid-vector_active"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-            </ul>
+            <ul class="elements__container"></ul>
           </section>
         </main>
         <footer class="footer">
           <p class="footer__text">&#169; 2020 Mesto Russia</p>
         </footer>
-        <div class="popup">
+        <div class="popup popup__edit-profile">
           <div class="popup__container">
             <form class="popup__form" action="#" name="form">
               <fieldset class="popup__info">
@@ -146,11 +61,67 @@
               </fieldset>
               <button class="popup__submit" type="submit">Сохранить</button>
             </form>
-            <button class="popup__close-icon" type="button"></button>
+            <button
+              class="popup__close-icon popup__close-icon_type_edit"
+              type="button"
+            ></button>
+          </div>
+        </div>
+        <div class="popup popup__add-card">
+          <div class="popup__container">
+            <form class="popup__form" action="#" name="form">
+              <fieldset class="popup__info">
+                <h2 class="popup__title">Новое место</h2>
+                <input
+                  type="text"
+                  class="popup__input popup__input_type_title"
+                  name="title"
+                  placeholder="Название"
+                />
+                <input
+                  type="text"
+                  class="popup__input popup__input_type_link"
+                  name="link"
+                  placeholder="Ссылка на картинку"
+                />
+              </fieldset>
+              <button
+                class="popup__submit popup__submit_type_add"
+                type="submit"
+              >
+                Создать
+              </button>
+            </form>
+            <button
+              class="popup__close-icon popup__close-icon_type_add"
+              type="button"
+            ></button>
+          </div>
+        </div>
+        <div class="popup popup__image">
+          <div class="popup__image-container">
+            <button
+              class="popup__close-icon popup__close-icon_type_image"
+              type="button"
+            ></button>
+            <div class="popup__image-form">
+              <img class="popup__image-scale" src="#" alt="Картинка" />
+              <p class="popup__image-caption"></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <template class="elements__template">
+      <li class="elements__grid-item">
+        <button class="elements__delete-icon" type="button"></button>
+        <img class="elements__grid-photo" src="#" alt="" />
+        <div class="elements__titles">
+          <h2 class="elements__grid-text"></h2>
+          <button class="elements__grid-vector" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

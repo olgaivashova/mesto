@@ -1,0 +1,6 @@
+.popup__image-container {
+  position: relative;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  max-width: 856px;
+}
