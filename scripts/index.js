@@ -1,10 +1,10 @@
 const elementsContainer = document.querySelector('.elements__container');
 const popupElement = document.querySelectorAll('.popup')
-const popupEditElement = document.querySelector('.popup__edit');
-const popupAddElement = document.querySelector('.popup__add');
+const popupEditElement = document.querySelector('.popup_place_edit');
+const popupAddElement = document.querySelector('.popup_place_add');
 const popupCloseButtonElement = document.querySelector('.popup__close-icon');
 const popupCloseAddElement = document.querySelector('.popup__close-icon_type_add');
-const popupImageElement = document.querySelector('.popup__image');
+const popupImageElement = document.querySelector('.popup_place_image');
 const formElement =document.querySelector('.popup__form');
 let nameInput = formElement.querySelector ('.popup__input_type_name');
 let aboutInput = formElement.querySelector('.popup__input_type_job');
