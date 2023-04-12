@@ -27,11 +27,17 @@
               <div class="profile__info">
                 <div class="profile__stripe">
                   <h1 class="profile__name">Жак-Ив Кусто</h1>
-                  <button class="profile__edit-button" type="button"></button>
+                  <button
+                    class="open-button profile__edit-button"
+                    type="button"
+                  ></button>
                 </div>
                 <p class="profile__profession">Исследователь океана</p>
               </div>
-              <button class="profile__add-button" type="button"></button>
+              <button
+                class="open-button profile__add-button"
+                type="button"
+              ></button>
             </div>
           </section>
           <section class="elements">
@@ -43,27 +49,45 @@
         </footer>
         <div class="popup popup_place_edit">
           <div class="popup__container">
-            <form class="popup__form popup__edit-form" action="#" name="form">
+            <form
+              class="popup__form popup__edit-form"
+              action="#"
+              name="form1"
+              novalidate
+            >
               <fieldset class="popup__info">
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input
+                  id="name-input"
                   type="text"
                   class="popup__input popup__input_type_name"
                   name="name"
                   placeholder="Имя"
-                  value="Жак-Ив Кусто"
+                  value=""
+                  minlength="2"
+                  maxlength="40"
                   required
                 />
+                <span class="popup__input-error name-input-error"></span>
                 <input
+                  id="about-input"
                   type="text"
                   class="popup__input popup__input_type_job"
                   name="job"
                   placeholder="О себе"
-                  value="Исследователь океана"
+                  value=""
+                  minlength="2"
+                  maxlength="200"
                   required
                 />
+                <span class="popup__input-error about-input-error"></span>
               </fieldset>
-              <button class="popup__submit" type="submit">Сохранить</button>
+              <button
+                class="popup__submit popup__submit_valid popup_submit_type_edit"
+                type="submit"
+              >
+                Сохранить
+              </button>
             </form>
             <button
               class="popup__close-icon popup__close-icon_type_edit"
@@ -73,25 +97,38 @@
         </div>
         <div class="popup popup_place_add">
           <div class="popup__container">
-            <form class="popup__form popup__add-form" action="#" name="form">
+            <form
+              class="popup__form popup__add-form"
+              action="#"
+              name="form2"
+              novalidate
+            >
               <fieldset class="popup__info">
                 <h2 class="popup__title">Новое место</h2>
                 <input
+                  id="title-input"
                   type="text"
                   class="popup__input popup__input_type_title"
                   name="title"
                   placeholder="Название"
+                  minlength="2"
+                  maxlength="30"
                   required
                 />
+                <span class="popup__input-error title-input-error"></span>
                 <input
+                  id="link-input"
                   type="url"
                   class="popup__input popup__input_type_link"
                   name="link"
                   placeholder="Ссылка на картинку"
+                  required
                 />
+                />
+                <span class="popup__input-error link-input-error"></span>
               </fieldset>
               <button
-                class="popup__submit popup__submit_type_add"
+                class="popup__submit popup__submit_type_add popup__submit_valid"
                 type="submit"
               >
                 Создать
@@ -128,6 +165,7 @@
       </li>
     </template>
     <script defer src="./scripts/constants.js"></script>
+    <script defer src="./scripts/validate.js"></script>
     <script defer src="./scripts/index.js"></script>
   </body>
 </html>
