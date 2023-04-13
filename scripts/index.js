@@ -1,7 +1,6 @@
 const popupEditElement = document.querySelector(".popup_place_edit");
 const popupAddElement = document.querySelector(".popup_place_add");
 const popupImageElement = document.querySelector(".popup_place_image");
-//const mainPopupElement = document.querySelectorAll(".popup");
 const closeButtons = document.querySelectorAll(".popup__close-icon");
 const editFormElement = document.querySelector(".popup__edit-form");
 const addFormElement = document.querySelector(".popup__add-form");
@@ -19,6 +18,12 @@ const cardsContainer = document.querySelector(".elements__container");
 const cardsTemplate = document.querySelector(".elements__template").content;
 const titleInput = popupAddElement.querySelector(".popup__input_type_title");
 const linkInput = popupAddElement.querySelector(".popup__input_type_link");
+const addSubmitButton = popupAddElement.querySelector(
+  ".popup__submit_type_add"
+);
+const editSubmitButton = popupEditElement.querySelector(
+  ".popup__submit_type_edit"
+);
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
@@ -30,6 +35,7 @@ popupEditOpenButtonElement.addEventListener("click", () => {
   nameInput.value = nameInputNewValue.textContent;
   aboutInput.value = aboutInputNewValue.textContent;
   resetErrorWhileOpening(editFormElement);
+  disableButton(editSubmitButton, validationConfig);
 });
 
 function createCard(item) {
@@ -84,6 +90,7 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 popupAddOpenButtonElement.addEventListener("click", () => {
   openPopup(popupAddElement);
   resetErrorWhileOpening(addFormElement);
+  disableButton(addSubmitButton, validationConfig);
 });
 
 function toggleLike(event) {
