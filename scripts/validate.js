@@ -91,7 +91,7 @@ const disableButton = (button, { activeButtonClass, inactiveButtonClass }) => {
   button.setAttribute("disabled", true);
 };
 
-function resetErrorWhileOpening(form) {
+function resetErrorByOpening(form) {
   document.querySelectorAll(validationConfig.inputSelector).forEach((input) => {
     const errorContainer = document.querySelector(`.${input.id}-error`);
     if (!input.validity.valid) {
