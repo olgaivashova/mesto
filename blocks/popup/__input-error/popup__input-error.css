@@ -8,3 +8,9 @@
   color: #ff0000;
   padding-left: 36px;
 }
+@media screen and (max-width: 1275px) {
+  .popup__input-error {
+    line-height: 12px;
+    padding-left: 22px;
+  }
+}

@@ -1,0 +1,6 @@
+.popup__form-field {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  height: 56px;
+}
