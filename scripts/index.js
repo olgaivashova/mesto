@@ -83,7 +83,6 @@ const handleEditFormSubmit = function (evt) {
   nameInputNewValue.textContent = nameInput.value;
   aboutInputNewValue.textContent = aboutInput.value;
   closePopup(popupEditElement);
-  closePopupByEsc(popupEditElement);
 };
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
@@ -109,7 +108,6 @@ const handleAddFormSubmit = function (evt) {
   const newCard = createCard(cardData);
   cardsContainer.prepend(newCard);
   closePopup(popupAddElement);
-  closePopupByEsc(addFormElement);
   addFormElement.reset();
 };
 addFormElement.addEventListener("submit", handleAddFormSubmit);
