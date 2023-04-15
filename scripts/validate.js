@@ -29,7 +29,7 @@ const setEventListeners = (
 
   formInputs.forEach((input) => {
     input.addEventListener("input", () => {
-      checkInputValidity(input);
+      checkInputValidity(form, input);
       if (hasInvalidInput(formInputs)) {
         disableButton(formButton, rest);
       } else {
@@ -39,16 +39,23 @@ const setEventListeners = (
   });
 };
 
-const checkInputValidity = (input) => {
-  const errorContainer = document.querySelector(`.${input.id}-error`);
-
+const checkInputValidity = (form, input, inputErrorClass) => {
   if (input.checkValidity()) {
-    errorContainer.textContent = "";
-    input.classList.remove(validationConfig.inputErrorClass);
+    hideInputError(form, input, inputErrorClass);
   } else {
-    errorContainer.textContent = input.validationMessage;
-    input.classList.add(validationConfig.inputErrorClass);
+    showInputError(form, input, inputErrorClass);
   }
+};
+const showInputError = (form, input, inputErrorClass) => {
+  const errorContainer = form.querySelector(`.${input.id}-error`);
+  errorContainer.textContent = input.validationMessage;
+  input.classList.add(inputErrorClass);
+};
+
+const hideInputError = (form, input, inputErrorClass) => {
+  const errorContainer = form.querySelector(`.${input.id}-error`);
+  errorContainer.textContent = "";
+  input.classList.remove(inputErrorClass);
 };
 
 const hasInvalidInput = (formInputs) => {
@@ -69,13 +76,12 @@ const disableButton = (button, { activeButtonClass, inactiveButtonClass }) => {
 
 enableValidation(validationConfig);
 
-function resetErrorByOpening(form) {
+function resetErrorByOpening(form, inputSelector, inputErrorClass) {
   form.querySelectorAll(validationConfig.inputSelector).forEach((input) => {
     const errorContainer = form.querySelector(`.${input.id}-error`);
-    console.log(errorContainer);
+
     if (!input.validity.valid || input.validity.valid) {
-      errorContainer.textContent = "";
-      input.classList.remove(validationConfig.inputErrorClass);
+      hideInputError(form, input, validationConfig.inputErrorClass);
     }
   });
 }
