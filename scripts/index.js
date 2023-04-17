@@ -34,11 +34,7 @@ popupEditOpenButtonElement.addEventListener("click", () => {
   openPopup(popupEditElement);
   nameInput.value = nameInputNewValue.textContent;
   aboutInput.value = aboutInputNewValue.textContent;
-  resetErrorByOpening(
-    editFormElement,
-    validationConfig.inputSelector,
-    validationConfig.inputErrorClass
-  );
+  resetErrorByOpening(editFormElement, validationConfig);
   disableButton(editSubmitButton, validationConfig);
 });
 
@@ -92,11 +88,7 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 popupAddOpenButtonElement.addEventListener("click", () => {
   openPopup(popupAddElement);
-  resetErrorByOpening(
-    addFormElement,
-    validationConfig.inputSelector,
-    validationConfig.inputErrorClass
-  );
+  resetErrorByOpening(addFormElement, validationConfig);
   disableButton(addSubmitButton, validationConfig);
 });
 

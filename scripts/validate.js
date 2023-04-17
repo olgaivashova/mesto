@@ -76,10 +76,8 @@ const disableButton = (button, { activeButtonClass, inactiveButtonClass }) => {
 
 enableValidation(validationConfig);
 
-function resetErrorByOpening(form, inputSelector, inputErrorClass) {
+function resetErrorByOpening(form, validationConfig) {
   form.querySelectorAll(validationConfig.inputSelector).forEach((input) => {
-    const errorContainer = form.querySelector(`.${input.id}-error`);
-
     if (!input.validity.valid || input.validity.valid) {
       hideInputError(form, input, validationConfig.inputErrorClass);
     }
