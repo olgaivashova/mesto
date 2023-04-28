@@ -1,16 +1,18 @@
 .popup__input-error {
-  display: flex;
+  display: inline-block;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   color: #ff0000;
-  padding-left: 36px;
+  width: 358px;
+  text-align: left;
 }
+
 @media screen and (max-width: 1275px) {
   .popup__input-error {
     line-height: 12px;
-    padding-left: 22px;
+    width: 238px;
   }
 }
