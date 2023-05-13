@@ -12,7 +12,6 @@ import { UserInfo, profileInfo } from "./components/UserInfo.js";
 import PopupWithForm from "./components/PopupWithForm.js";
 import {
   initialCards,
-  popupAddElement,
   popupEditOpenButtonElement,
   popupAddOpenButtonElement,
   addSubmitButton,
