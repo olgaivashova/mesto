@@ -1,5 +1,6 @@
 export const editFormElement = document.querySelector(".popup__edit-form");
 export const addFormElement = document.querySelector(".popup__add-form");
+export const avatarFormElement = document.querySelector(".popup__avatar-form");
 
 export const validationConfig = {
   inputSelector: ".popup__input",
@@ -47,7 +48,7 @@ export class FormValidator {
   };
 
   _checkInputValidity = (input) => {
-    const errorContainer = document.querySelector(`.${input.id}-error`);
+    const errorContainer = this._form.querySelector(`.${input.id}-error`);
     if (input.validity.valid) {
       return this._hideInputError(input, errorContainer);
     } else {

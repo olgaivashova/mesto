@@ -1,12 +1,14 @@
 export const profileInfo = {
   nameSelector: ".profile__name",
   professionSelector: ".profile__profession",
+  avatarSelector: ".profile__avatar",
 };
 
 export class UserInfo {
-  constructor(configInfo) {
-    this._profileName = document.querySelector(configInfo.nameSelector);
-    this._about = document.querySelector(configInfo.professionSelector);
+  constructor(config) {
+    this._profileName = document.querySelector(config.nameSelector);
+    this._about = document.querySelector(config.professionSelector);
+    this._avatar = document.querySelector(config.avatarSelector);
   }
 
   getUserInfo() {
@@ -15,8 +17,9 @@ export class UserInfo {
       job: this._about.textContent,
     };
   }
-  setUserInfo(data) {
-    this._profileName.textContent = data.name;
-    this._about.textContent = data.job;
+  setUserInfo({ username, job, avatar }) {
+    this._profileName.textContent = username;
+    this._about.textContent = job;
+    this._avatar.src = avatar;
   }
 }

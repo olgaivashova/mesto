@@ -5,7 +5,7 @@
   height: 50px;
   display: block;
   color: white;
-  margin: 48px 36px 37px;
+  margin: 38px 36px 37px;
   border: none;
   border-radius: 2px;
   font-family: "Inter", "Arial", sans-serif;
@@ -24,7 +24,7 @@
   .popup__submit {
     width: 238px;
     height: 46px;
-    margin: 48px 22px 25px;
+    margin: 38px 22px 25px;
     font-size: 14px;
     line-height: 17px;
   }
