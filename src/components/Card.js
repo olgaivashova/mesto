@@ -9,7 +9,7 @@ export default class Card {
     this._data = object;
     this._name = object.name;
     this._link = object.link;
-    this._alt = object.title;
+    this._alt = object.name;
     this._myId = object.myid;
     this._ownerId = object.owner._id;
     this._cardId = object._id;
@@ -30,21 +30,6 @@ export default class Card {
     return cardElement;
   }
 
-  _checkCardOwnership() {
-    if (this._myId !== this._ownerId) {
-      this._trash.classList.add("elements__delete-icon_type_inactive");
-    }
-  }
-  _isLiked() {
-    this._likes.forEach((element) => {
-      if (element._id === this._myId) {
-        this._likeIcon.classList.add("elements__grid-vector_active");
-        return;
-      }
-    });
-    this._counter.textContent = this._likesLength;
-  }
-
   generateCard() {
     this._element = this._getTemplate();
     this._textElement = this._element.querySelector(".elements__grid-text");
@@ -61,6 +46,19 @@ export default class Card {
     return this._element;
   }
 
+  _checkCardOwnership() {
+    if (this._myId !== this._ownerId) {
+      this._trash.classList.add("elements__delete-icon_type_inactive");
+    }
+  }
+  _isLiked() {
+    this._likes.forEach((element) => {
+      if (element._id === this._myId) {
+        this._likeIcon.classList.add("elements__grid-vector_active");
+      }
+    });
+    this._counter.textContent = this._likesLength;
+  }
   _setEventListeners() {
     this._gridPhoto.addEventListener("click", () => {
       this._openImagePopup(this._data);
@@ -73,8 +71,13 @@ export default class Card {
     });
   }
 
-  toggleLikes(likes) {
-    this._likeIcon.classList.toggle("elements__grid-vector_active");
+  putLikes(likes) {
+    this._likeIcon.classList.add("elements__grid-vector_active");
+    this._counter.textContent = likes.length;
+  }
+
+  removeLikes(likes) {
+    this._likeIcon.classList.remove("elements__grid-vector_active");
     this._counter.textContent = likes.length;
   }
 

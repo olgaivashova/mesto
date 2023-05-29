@@ -18,13 +18,14 @@ export default class Api {
       return Promise.reject();
     });
   }
-  setUserInfo(data) {
+  setInfo(data) {
     return fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
         name: data.name,
         about: data.job,
+        avatar: data.avatar,
       }),
     }).then((res) => {
       if (res.ok) {
@@ -38,6 +39,8 @@ export default class Api {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
+        name: data.name,
+        about: data.job,
         avatar: data.avatar,
       }),
     }).then((res) => {

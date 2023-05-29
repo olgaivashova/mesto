@@ -31,37 +31,22 @@ const api = new Api({
   },
 });
 
-const deletingCard = new PopupDeleteForm(
-  ".popup_place_delete",
-  ({ card, cardId }) => {
-    api
-      .deleteCard(cardId)
-      .then(() => {
-        card.deleteCard();
-        deletingCard.closePopup();
-      })
-      .catch((error) => console.error(error));
-  }
-);
-
-deletingCard.setEventListeners();
-
 function createNewCard(element) {
   const card = new Card(
     element,
     ".elements__template",
     imagePopup.openImage,
     deletingCard.open,
-    (likeElement, cardId) => {
-      if (likeElement.classList.contains("elements__grid-vector_active")) {
+    (like, cardId) => {
+      if (like.classList.contains("elements__grid-vector_active")) {
         api.deleteLike(cardId).then((res) => {
-          card.toggleLikes(res.likes);
+          card.removeLikes(res.likes);
         });
       } else {
         api
           .addLike(cardId)
           .then((res) => {
-            card.toggleLikes(res.likes);
+            card.putLikes(res.likes);
           })
           .catch((error) => console.error(error));
       }
@@ -94,19 +79,34 @@ Promise.all([api.getInfo(), api.getCards()])
   })
   .catch((error) => console.error(error));
 
+const deletingCard = new PopupDeleteForm(
+  ".popup_place_delete",
+  ({ card, cardId }) => {
+    api
+      .deleteCard(cardId)
+      .then(() => {
+        card.deleteCard();
+        deletingCard.closePopup();
+      })
+      .catch((error) => console.error(error));
+  }
+);
+
+deletingCard.setEventListeners();
+
 const editPopup = new PopupWithForm(".popup_place_edit", (data) => {
   api
-    .setUserInfo(data)
+    .setInfo(data)
     .then((dataUser) => {
       userInfo.setUserInfo({
         username: dataUser.name,
         job: dataUser.about,
         avatar: dataUser.avatar,
       });
+      editPopup.closePopup();
     })
     .catch((error) => console.error(error))
     .finally(() => editPopup.setLoadingText());
-  editPopup.closePopup();
 });
 editPopup.setEventListeners();
 
@@ -132,10 +132,10 @@ const avatarPopup = new PopupWithForm(".popup_place_save-avatar", (data) => {
         job: dataUser.about,
         avatar: dataUser.avatar,
       });
+      avatarPopup.closePopup();
     })
     .catch((error) => console.error(error))
     .finally(() => avatarPopup.setLoadingText());
-  avatarPopup.closePopup();
 });
 avatarPopup.setEventListeners();
 
