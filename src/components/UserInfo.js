@@ -1,10 +1,4 @@
-export const profileInfo = {
-  nameSelector: ".profile__name",
-  professionSelector: ".profile__profession",
-  avatarSelector: ".profile__avatar",
-};
-
-export class UserInfo {
+export default class UserInfo {
   constructor(config) {
     this._profileName = document.querySelector(config.nameSelector);
     this._about = document.querySelector(config.professionSelector);
@@ -21,5 +15,12 @@ export class UserInfo {
     this._profileName.textContent = username;
     this._about.textContent = job;
     this._avatar.src = avatar;
+  }
+
+  pointId(id) {
+    this._id = id;
+  }
+  returnId() {
+    return this._id;
   }
 }

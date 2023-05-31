@@ -1,16 +1,4 @@
-export const editFormElement = document.querySelector(".popup__edit-form");
-export const addFormElement = document.querySelector(".popup__add-form");
-export const avatarFormElement = document.querySelector(".popup__avatar-form");
-
-export const validationConfig = {
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__submit",
-  inactiveButtonClass: "popup__submit_type_inactive",
-  activeButtonClass: "popup__submit_valid",
-  inputErrorClass: "popup__input_type_error",
-};
-
-export class FormValidator {
+export default class FormValidator {
   constructor(config, form) {
     this._form = form;
     this._inputSelector = config.inputSelector;
@@ -19,6 +7,7 @@ export class FormValidator {
     this._activeButtonClass = config.activeButtonClass;
     this._inputErrorClass = config.inputErrorClass;
     this._formInputs = this._form.querySelectorAll(this._inputSelector);
+    console.log(this._formInputs);
     this._formButton = this._form.querySelector(this._submitButtonSelector);
   }
   _enableButton = (button) => {
@@ -48,7 +37,7 @@ export class FormValidator {
   };
 
   _checkInputValidity = (input) => {
-    const errorContainer = this._form.querySelector(`.${input.id}-error`);
+    const errorContainer = document.querySelector(`.${input.id}-error`);
     if (input.validity.valid) {
       return this._hideInputError(input, errorContainer);
     } else {

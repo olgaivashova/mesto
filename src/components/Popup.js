@@ -2,7 +2,6 @@ export default class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector);
     this._closeButton = this._popup.querySelector(".popup__close-icon");
-    this._form = this._popup.querySelector(".popup__form");
   }
 
   _handleEscClose = (e) => {

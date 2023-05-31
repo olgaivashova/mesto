@@ -1,24 +1,24 @@
-import "./pages/index.css";
-import Card from "./components/Card.js";
+import "./index.css";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import Api from "../components/Api.js";
+import PopupDeleteForm from "../components/PopupDeleteForm";
 import {
-  editFormElement,
-  addFormElement,
-  validationConfig,
-  FormValidator,
   avatarFormElement,
-} from "./components/Validator.js";
-import PopupWithImage from "./components/PopupWithImage.js";
-import Section from "./components/Section.js";
-import { UserInfo, profileInfo } from "./components/UserInfo.js";
-import PopupWithForm from "./components/PopupWithForm.js";
-import Api from "./components/Api.js";
-import {
+  profileInfo,
   popupEditOpenButtonElement,
   popupAddOpenButtonElement,
   addSubmitButton,
+  avatarSubmitButton,
   avatarButton,
-} from "./utils/utils.js";
-import PopupDeleteForm from "./components/PopupDeleteForm";
+  validationConfig,
+  addFormElement,
+  editFormElement,
+} from "../utils/utils.js";
 
 const imagePopup = new PopupWithImage(".popup_place_image");
 imagePopup.setEventListeners();
@@ -37,16 +37,19 @@ function createNewCard(element) {
     ".elements__template",
     imagePopup.openImage,
     deletingCard.open,
-    (like, cardId) => {
-      if (like.classList.contains("elements__grid-vector_active")) {
-        api.deleteLike(cardId).then((res) => {
-          card.removeLikes(res.likes);
+    () => {
+      const isLiked = card.isLiked();
+      if (isLiked) {
+        api.deleteLike(element._id).then((res) => {
+          card.toggleLikes();
+          card.setCounter(res.likes);
         });
       } else {
         api
-          .addLike(cardId)
+          .addLike(element._id)
           .then((res) => {
-            card.putLikes(res.likes);
+            card.toggleLikes();
+            card.setCounter(res.likes);
           })
           .catch((error) => console.error(error));
       }
@@ -54,7 +57,6 @@ function createNewCard(element) {
   );
   return card.generateCard();
 }
-
 const cardSection = new Section(
   (element) => {
     cardSection.setItem(createNewCard(element));
@@ -75,6 +77,7 @@ Promise.all([api.getInfo(), api.getCards()])
       job: dataUser.about,
       avatar: dataUser.avatar,
     });
+    userInfo.pointId(dataUser._id);
     cardSection.addCard(dataCard);
   })
   .catch((error) => console.error(error));
@@ -111,10 +114,10 @@ const editPopup = new PopupWithForm(".popup_place_edit", (data) => {
 editPopup.setEventListeners();
 
 const addPopup = new PopupWithForm(".popup_place_add", (data) => {
-  //cardSection.setItem(createNewCard(data));
-  Promise.all([api.getInfo(), api.addCard(data)])
-    .then(([dataUser, dataCard]) => {
-      dataCard.myid = dataUser._id;
+  api
+    .addCard(data)
+    .then((dataCard) => {
+      dataCard.myid = userInfo.returnId();
       cardSection.setItem(createNewCard(dataCard));
       addPopup.closePopup();
     })
@@ -141,6 +144,9 @@ avatarPopup.setEventListeners();
 
 avatarButton.addEventListener("click", () => {
   avatarPopup.openPopup();
+  avatarPopup.reset();
+  avatarFormValidator.resetErrorByOpening();
+  avatarFormValidator.disableButton(avatarSubmitButton);
 });
 
 const editFormValidator = new FormValidator(validationConfig, editFormElement);

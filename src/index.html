@@ -121,13 +121,12 @@
                 </label>
                 <label class="popup__form-field">
                   <input
-                    id="url-input"
+                    id="link-input"
                     type="url"
                     class="popup__input popup__input_type_link"
                     name="link"
                     placeholder="Ссылка на картинку"
                     required
-                  />
                   />
                   <span class="popup__input-error link-input-error"></span>
                 </label>
@@ -191,14 +190,14 @@
                 <h2 class="popup__title">Обновить аватар</h2>
                 <label class="popup__form-field">
                   <input
-                    name="avatar"
-                    id="link-input"
+                    id="avatar-input"
                     type="url"
+                    class="popup__input popup__input_type_avatar"
+                    name="avatar"
                     placeholder="Ссылка на картинку"
                     required
-                    class="popup__input popup__input_type_avatar"
                   />
-                  <span class="popup__input-error link-input-error"></span>
+                  <span class="popup__input-error avatar-input-error"></span>
                 </label>
               </fieldset>
               <button
@@ -225,6 +224,6 @@
         </div>
       </li>
     </template>
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./pages/index.js"></script>
   </body>
 </html>
