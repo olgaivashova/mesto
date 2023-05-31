@@ -49,7 +49,7 @@
 .popup__submit{background-color:#000;border:none;border-radius:2px;box-sizing:border-box;color:#fff;display:block;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:400;height:50px;letter-spacing:0;line-height:22px;margin:38px 36px 37px;text-align:center;width:358px}.popup__submit:hover{cursor:pointer;opacity:.8}@media screen and (max-width:1275px){.popup__submit{font-size:14px;height:46px;line-height:17px;margin:38px 22px 25px;width:238px}}
 
 .popup__submit_type_inactive{background-color:#e5e5e5;border:1px solid #000;border-radius:2px;color:#000;opacity:.2}
-.popup__image-container{background-color:transparent;display:flex;max-width:856px;position:relative}
+.popup__image-container{background-color:transparent;display:flex;position:relative}
 .popup__image-form{background-color:transparent}
 .popup__image-scale{max-height:75vh;max-width:75vw;-o-object-fit:fill;object-fit:fill}
 .popup__image-caption{color:#fff;font-family:Inter,Arial,sans-serif;font-size:12px;font-weight:400;letter-spacing:0;line-height:15px;margin:0;padding-top:10px;text-align:left}
